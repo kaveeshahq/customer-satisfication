@@ -3,17 +3,16 @@ const cors = require('cors');
 const feedbackRoutes = require('./routes/feedbackRoutes');
 const errorHandler = require('./middleware/errorHandler');
 
-console.log('typeof feedbackRoutes:', typeof feedbackRoutes);
-console.log('typeof errorHandler:', typeof errorHandler);
-
 const app = express();
 
-// Configure CORS properly here
+// Update CORS with your actual Netlify URL
 app.use(cors({
   origin: [
     'http://localhost:5174',
-    'https://your-actual-netlify-url.netlify.app' // Update with your real Netlify URL
-  ]
+    'https://customer-satisfication.netlify.app'  // Add your actual Netlify URL
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
