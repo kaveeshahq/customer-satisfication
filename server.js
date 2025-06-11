@@ -4,12 +4,13 @@ const connectDB = require('./config/db');
 
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
-  origin: [
-    'http://localhost:5174',
-    'https://your-app-name.netlify.app' 
-  ]
-}));
+// Remove this CORS block - it's already in app.js
+// app.use(cors({
+//   origin: [
+//     'http://localhost:5174',
+//     'https://your-app-name.netlify.app' 
+//   ]
+// }));
 
 connectDB().then(() => {
   app.listen(PORT, () => {
